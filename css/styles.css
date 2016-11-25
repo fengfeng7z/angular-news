@@ -1,0 +1,32 @@
+.container {
+  margin-top: 20px;
+}
+
+.newsList {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.newsList li {
+  display: inline-flex;
+  margin: 10px;
+  width: calc(25% - 20px);
+}
+
+.newsList li:hover {
+  opacity: 0.5;
+}
+
+.newsList li a:hover {
+  text-decoration: none;
+}
+
+.newsList li img {
+  max-width: 100%;
+}
+
+.newsList li h3 {
+  min-height: 120px;
+  color: #1d1f20;
+}

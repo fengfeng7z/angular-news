@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+ 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>News Aggregator</title>
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.1/angular.min.js"></script>
+  <script src="./scripts/app.js"></script>
+  <script src="./scripts/factories/newsFactory.js"></script>
+  <script src="./scripts/controllers/newsCtrl.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+ 
+<body ng-app="NewsApp">
+ 
+  <div class="container">
+    <h1>Guardian News Feed</h1>
+    <p>An AngularJS app built to display the latest news from the Guardian.</p>
+      <div ng-controller="NewsCtrl">
+ 
+        <div class="input-group news-category">
+          <input type="text" class="form-control" placeholder="News category (Try: sport, money, law, film)" ng-model="category">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button" ng-click="getNews()">Go!</button>
+          </span>
+        </div>
+ 
+        <ul class="newsList">
+          <li ng-repeat="result in results">
+            <a href="{{result.webUrl}}" target="_blank">
+              <img src="{{result.fields.thumbnail}}"/>
+              <p class="tag tag-default">{{result.sectionName}}</p>
+              <h3>{{result.webTitle}}</h3>
+            </a>
+          </li>
+        </ul>
+      </div>
+  </div>
+ 
+</body>
+</html>
